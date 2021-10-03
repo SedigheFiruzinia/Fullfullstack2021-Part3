@@ -2,8 +2,8 @@
 const mongoose = require('mongoose')
 const uniqueValidator = require('mongoose-unique-validator')
 
-const url= process.env.MONGODB_URI
-
+const urll= process.env.MONGODB_URI
+const url= "mongodb+srv://Mahmoodreza:Mahmoodreza@cluster0.gfsqg.mongodb.net/persons?retryWrites=true"
 
 console.log('connecting to', url)
 
