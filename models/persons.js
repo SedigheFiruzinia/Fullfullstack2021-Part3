@@ -2,13 +2,14 @@
 const mongoose = require('mongoose')
 const uniqueValidator = require('mongoose-unique-validator')
 
-const urll= process.env.MONGODB_URI
-const url= "mongodb+srv://Mahmoodreza:Mahmoodreza@cluster0.gfsqg.mongodb.net/persons?retryWrites=true"
+
+//const urll = process.env.MONGODB_URI
+const url = 'mongodb+srv://Mahmoodreza:Mahmoodreza@cluster0.gfsqg.mongodb.net/persons?retryWrites=true'
 
 console.log('connecting to', url)
 
-mongoose.connect(url , { useNewUrlParser: true, useUnifiedTopology: true })
-  .then(result => {
+mongoose.connect(url, { useNewUrlParser: true, useUnifiedTopology: true })
+  .then(() => {
     console.log('connected to MongoDB')
   })
   .catch((error) => {
@@ -16,8 +17,8 @@ mongoose.connect(url , { useNewUrlParser: true, useUnifiedTopology: true })
   })
 
 const personSchema = new mongoose.Schema({
-  name: {type:String, minlength:3, unique:true},
-  number: {type:String, minlength:8, validate: /(\d.*){8,}/},
+  name: { type: String, minlength: 3, unique: true },
+  number: { type: String, minlength: 8, validate: /(\d.*){8,}/ },
   idperson: String,
 })
 
